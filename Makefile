@@ -16,10 +16,11 @@ install: $(HEADERS) $(PROGRAMS)
 	cp $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
 
 ## -- manpages --
-install: install-man
-install-man: ./doc/pathsearch.3.md 
+MAN_3=./doc/pathsearch.3 
+install: install-man3
+install-man3: $(MAN_3)
 	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man3
-	cp ./doc/pathsearch.3  $(DESTDIR)$(PREFIX)/share/man/man3
+	cp $(MAN_3) $(DESTDIR)$(PREFIX)/share/man/man3
 ## -- manpages --
 ## -- license --
 install: install-license
